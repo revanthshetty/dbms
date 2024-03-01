@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="">
+    P1. Program that allows user to input their first name and last name and
+    display their full name.
+  </h1>
+
+  <form action="" class="form-section" [formGroup]="form" (ngSubmit)="submit()">
+    <label for="usn" class="label-section">USN</label>
+    <input
+      type="text"
+      class="input-section"
+      formControlName="usn"
+      placeholder="Enter USN"
+    />
+
+    <label for="usn" class="label-section">password</label>
+    <input
+      type="password"
+      class="input-section"
+      formControlName="password"
+      placeholder="Enter password"
+    />
+
+    <div class="aleart-section" *ngIf="alert">
+      <p>ERROR: Please fill all felids of form</p>
+    </div>
+
+    <button class="btn-section">Submit</button>
+  </form>
+
+  <h3>
+    Entered Name :
+    {{ form.value.usn + " " + form.value.password }}
+  </h3>
+ 
+</div>
